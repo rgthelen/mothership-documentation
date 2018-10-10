@@ -52,6 +52,6 @@ For example, given the configuration block:
 ```
 `${domains.main}` would evaluate to `myurl.com`.
 
-! Template pointers can reference any key within the config itself, whether in the environment config or the base. Template pointers
+Template pointers can reference any key within the config itself, whether in the environment config or the base. Template pointers
 are always evaluated last and can reference other values that also contain template pointers. Template pointers will always be
 evaluated in the proper order so that all values get resolved.
