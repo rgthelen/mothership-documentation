@@ -52,7 +52,7 @@ Let's now create a config for a staging environment.
     {
         "env": "staging",
         "urls": {
-            "dashboard": "https://app.dev.mothership.cloud"
+            "dashboard": "https://app.staging.mothership.cloud"
         }
     }
     ```
@@ -66,4 +66,42 @@ Mothership supports a growing number of languages and frameworks. To view a
 complete list of official clients and those developed by the community, see
 the [Client SDK docs](/sdks).
 
+The [examples GitHub repository](https://github.com/spicket/mothership-client-examples) 
+contains sample implementations for each supported platform. Check it out to see how a 
+client might be used in real world scenarios.
+
 ### Using template pointers
+[Template pointers](/config-mgmt/concepts#template-pointers) are a powerful mechanism
+for making configurations more dynamic. Let's add a template pointer to our sample config.
+
+1. Open the previously created app and navigate to the "base" environment.
+2. Change the base config to look like this:
+
+    ```
+    {
+        "name": "Mothership sample config ${env}",
+        "urls": {
+            "main": "https://${url_prefix}mothership.cloud",
+            "dashboard": "https://app.${url_prefix}mothership.cloud",
+            "docs": "https://docs.${url_prefix}mothership.cloud"
+        },
+        "url_prefix": ""
+    }
+    ```
+
+3. Save that config, return to the app's list of environments, and now open the "staging" environment.
+4. Change the staging config to look like this:
+
+    ```
+    {
+        "env": "staging",
+        "url_prefix": "${env}."
+    }
+    ```
+
+5. Save the config.
+
+Now, when the staging environment config is requested, it will populate the correct URLs
+for that environment without needing to manually specify them. Now, if some part of the
+domain ever changes, we can simply update the base environment instead of needing to
+change other environments. As a bonus, this will still work perfectly for production.

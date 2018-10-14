@@ -10,4 +10,4 @@ pre = "<b>2. </b>"
 
 # Using Mothership SDKs
 
-Lorem Ipsum.
+Documentation for supported Mothership platforms
