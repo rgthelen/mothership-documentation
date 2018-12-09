@@ -10,4 +10,4 @@ pre = "<b>3. </b>"
 
 # Additional help and resources
 
-Lorem Ipsum.
+Getting support when something goes wrong or you have a question.

@@ -6,12 +6,25 @@ theme = "hugo-theme-learn"
 
 [params]
 themeVariant = "mothership"
+editURL = "https://github.com/spicket/mothership-documentation/edit/master/content/"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
-[[menu.shortcuts]] 
-name = "<i class='fab fa-github'></i> Github repo"
-identifier = "ds"
-url = "https://github.com/spicket/mothership-documentation"
+[[menu.shortcuts]]
+name = "<i class='fas fa-home'></i> Mothership website"
+identifier = "home"
+url = "https://mothership.cloud"
 weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='far fa-life-ring'></i> Support portal"
+identifier = "support"
+url = "https://support.mothership.cloud"
+weight = 15
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Github repo"
+identifier = "github"
+url = "https://github.com/spicket/mothership-documentation"
+weight = 20
